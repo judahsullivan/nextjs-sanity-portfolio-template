@@ -6,5 +6,5 @@ export const pageTreeConfig: PageTreeConfig = {
   pageSchemaTypes: ['home', 'page','article','project'],
   apiVersion,
   titleFieldName: 'title',
-  baseUrl: "https://example.com"
+  baseUrl: "https://nextjs-sanity-portfolio-template.vercel.app/"
 };
