@@ -18,9 +18,10 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
         "@/*": ["./*"],
+        "@/src/*": ["./src/*"],
       "@/sanity/*": ["./sanity/*"],
       "@/public/*": ["./public/*"],
       "@/styles/*": ["./src/styles/*"],
