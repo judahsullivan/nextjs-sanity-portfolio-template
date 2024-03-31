@@ -1,3 +1,5 @@
+import { Image } from "sanity";
+
 export interface HomeProps{
 
     title?: string;
@@ -37,6 +39,17 @@ export interface ProjectProps{
 
 interface Slug{
     current: string;
+}
+
+export interface MenuItem {
+  _type: string
+  slug?: string
+  title?: string
+}
+
+export interface SettingsPayload {
+  menuItems?: MenuItem[]
+  ogImage?: Image 
 }
 
 export function isArticleProps(object: any): object is ArticleProps{return object._type === 'article' }

@@ -15,6 +15,7 @@ export default function PageLayout({page}: PageProps){
                 <div className="max-w-fit flex flex-col gap-5">
                 <h2 className="text-6xl">{page.title}</h2>
                 <hr />
+                <p>{page.description}</p>
                 </div>
                 <div className="flex flex-col gap-5">
                 {page.contents?.map((content) => {

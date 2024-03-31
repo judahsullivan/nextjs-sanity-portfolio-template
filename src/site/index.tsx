@@ -18,7 +18,7 @@ interface PageHandlerProps  {
 export default async function SiteHandler({ pageMetadata }: PageHandlerProps)  {
   switch (pageMetadata.type) {
     case 'home': {
-      const home = await client.fetch<any>(`*[_id == $id][0]{title }`, { id: pageMetadata._id });
+      const home = await client.fetch<any>(`*[_id == $id][0]{...}`, { id: pageMetadata._id });
 
       if (!home) {
         return notFound();

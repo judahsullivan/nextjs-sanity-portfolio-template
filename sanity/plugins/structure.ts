@@ -18,7 +18,7 @@ export const DeskStructure = (S: StructureBuilder) =>
   S.list()
     .title('Welcome to your Desk!')
     .items([
-          singletonListItem(S, "globals", "Global Settings"),
+          singletonListItem(S, "settings", "Global Settings"),
           S.divider(),
  S.listItem()
               .title('Pages')
