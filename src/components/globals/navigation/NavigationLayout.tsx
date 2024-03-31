@@ -21,7 +21,7 @@ export default function NavigationLayout(props: NavigationProps){
             <div className="flex h-full mx-auto items-center justify-between max-w-screen-xl 2xl:max-w-screen-2xl">
               <div>
                 {homeLink && (() => {
-                  const href = resolveHref(homeLink._type)
+                  const href = resolveHref(homeLink._type,homeLink.slug)
                   if(!href){
                     return null
                   }
@@ -29,7 +29,6 @@ export default function NavigationLayout(props: NavigationProps){
                     <Link
                     passHref
                     href={href}
-                    replace={false}
                     >
                       {homeLink.title}
                     </Link>
