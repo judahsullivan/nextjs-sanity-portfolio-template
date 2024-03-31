@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { NavigationProps } from ".";
+import Link from "next/link";
 import { MenuItem } from "@/src/types/types";
 import { resolveHref } from "@/sanity/lib/resolveUrl";
 
@@ -27,8 +27,10 @@ export default function NavigationLayout(props: NavigationProps){
                   }
                   return(
                     <Link
-                    passHref
-                    href={href}
+                    href={{
+                      query: {name:`${homeLink._type}`},
+                      pathname: href 
+                    }}
                     >
                       {homeLink.title}
                     </Link>
@@ -47,7 +49,10 @@ export default function NavigationLayout(props: NavigationProps){
             passHref
               key={key}
               className={''}
-              href={href}
+              href={{
+query: {name:`${menuItem._type}`},
+pathname: href 
+              }}
             >
               {menuItem.title}
             </Link>
