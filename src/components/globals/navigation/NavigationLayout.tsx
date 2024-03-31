@@ -21,13 +21,15 @@ export default function NavigationLayout(props: NavigationProps){
             <div className="flex h-full mx-auto items-center justify-between max-w-screen-xl 2xl:max-w-screen-2xl">
               <div>
                 {homeLink && (() => {
-                  const href = resolveHref(homeLink._type, homeLink.slug)
+                  const href = resolveHref(homeLink._type)
                   if(!href){
                     return null
                   }
                   return(
                     <Link
+                    passHref
                     href={href}
+                    replace={false}
                     >
                       {homeLink.title}
                     </Link>
@@ -43,6 +45,7 @@ export default function NavigationLayout(props: NavigationProps){
           }
           return (
             <Link
+            passHref
               key={key}
               className={''}
               href={href}
