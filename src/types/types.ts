@@ -1,0 +1,43 @@
+export interface HomeProps{
+
+    title?: string;
+    description?: string;
+
+}
+
+
+
+export interface PagesProps{
+    title?: string;
+    description?: string;
+    contents?: (ArticleProps | ProjectProps)[]
+
+}
+
+
+
+export  interface ArticleProps{
+    _type?: 'article';
+    _id: string;
+    title?: string;
+    description: string;
+    slug: Slug
+}
+
+export interface ProjectProps{
+    _type?: 'project';
+    _id: string;
+    title?: string;
+    description: string;
+    slug?: Slug
+
+}
+
+
+
+interface Slug{
+    current: string;
+}
+
+export function isArticleProps(object: any): object is ArticleProps{return object._type === 'article' }
+export function isProjectProps(object: any): object is ArticleProps{return object._type === 'project' }
