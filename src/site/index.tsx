@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import { client } from '@/sanity/lib/client';
 import { PageMetadata } from '@q42/sanity-plugin-page-tree/next';
-import Home from './home';
 import Page from './page';
 import ArticlePage from './article';
 import ProjectPage from './project';
@@ -17,15 +16,6 @@ interface PageHandlerProps  {
 
 export default async function SiteHandler({ pageMetadata }: PageHandlerProps)  {
   switch (pageMetadata.type) {
-    case 'home': {
-      const home = await client.fetch<any>(`*[_id == $id][0]{...}`, { id: pageMetadata._id });
-
-      if (!home) {
-        return notFound();
-      }
-      return <Home home={home} /> 
-
-    }
     case 'page': {
       const page =
        await client.fetch<any>(`

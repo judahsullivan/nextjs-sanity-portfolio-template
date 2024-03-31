@@ -1,5 +1,4 @@
-import { HomePageProps } from ".";
-
+import { HomePageProps } from "@/src/app/(Website)/page"
 
 
 
