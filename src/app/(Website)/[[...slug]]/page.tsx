@@ -8,7 +8,7 @@ interface  SiteProps  {
   };
 }
 
-export default async function Site  ({ params }: SiteProps)  {
+export default async function Site({ params }: SiteProps)  {
   const path = params.slug ? "/" + params.slug?.join('/') : '/';
   const pageMetadata = await pageTreeClient.getPageMetadataByPath(path);
 

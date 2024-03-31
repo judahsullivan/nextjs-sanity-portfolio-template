@@ -27,10 +27,8 @@ export default function NavigationLayout(props: NavigationProps){
                   }
                   return(
                     <Link
-                    href={{
-                      query: {name:`${homeLink._type}`},
-                      pathname: href 
-                    }}
+                    href={'/'}
+                    passHref
                     >
                       {homeLink.title}
                     </Link>
@@ -49,10 +47,7 @@ export default function NavigationLayout(props: NavigationProps){
             passHref
               key={key}
               className={''}
-              href={{
-query: {name:`${menuItem._type}`},
-pathname: href 
-              }}
+              href={href}
             >
               {menuItem.title}
             </Link>
