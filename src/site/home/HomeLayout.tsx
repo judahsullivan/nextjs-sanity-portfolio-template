@@ -10,7 +10,7 @@ export default function HomePageLayout({home}:HomePageProps ){
                 <div className="max-w-fit flex flex-col gap-5">
                 <h2 className="text-6xl">{home.title}</h2>
                 <hr />
-                <p>{home.description}</p>
+                <p className="text-lg">{home.description}</p>
                 </div>
         </div>
         </div>

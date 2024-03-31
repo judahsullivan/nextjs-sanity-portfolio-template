@@ -12,11 +12,36 @@ const _articleType = defineType({
       title: 'Title',
       type: 'string',
     }),
-    defineField({
+defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
     }),
+     defineField({
+      name: "date",
+      title: "Date",
+      type: "datetime",
+      initialValue: () => new Date().toISOString(),
+    }),
+     defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags',
+      },
+    }),
+     defineField({
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      validation: (rule) => rule.required(),
+    }),
+    
   ],
 });
 

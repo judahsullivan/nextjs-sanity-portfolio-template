@@ -34,7 +34,10 @@ case 'article': {
       const article =
        await client.fetch<any>(`
        *[_id == $id][0]{
-        ...,
+        title,
+        description,
+        _id,
+        coverImage
       }`, { id: pageMetadata._id });
 
       if (!article) {

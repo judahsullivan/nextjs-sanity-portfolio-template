@@ -1,4 +1,4 @@
-import { Image } from "sanity";
+import type { Image } from "sanity";
 
 export interface HomeProps{
 
@@ -16,11 +16,16 @@ export interface PagesProps{
 
 }
 
+export interface SanityImage{
+
+
+}
 
 
 export  interface ArticleProps{
     _type?: 'article';
     _id: string;
+    coverImage: Image;
     title?: string;
     description: string;
     slug: Slug
