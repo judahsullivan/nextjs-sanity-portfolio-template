@@ -37,7 +37,8 @@ case 'article': {
         title,
         description,
         _id,
-        coverImage
+        coverImage,
+        tags
       }`, { id: pageMetadata._id });
 
       if (!article) {
@@ -49,7 +50,11 @@ case 'project': {
       const project =
        await client.fetch<any>(`
        *[_id == $id][0]{
-        ...,
+title,
+        description,
+        _id,
+        coverImage,
+        tags
       }`, { id: pageMetadata._id });
 
       if (!project) {

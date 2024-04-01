@@ -15,7 +15,7 @@ interface ImageBoxProps {
 export default function ImageBox({
   image,
   alt = 'Cover image',
-  width = 1250,
+  width = 1400,
   height = 550,
   classesWrapper,
   ...props
@@ -25,18 +25,21 @@ export default function ImageBox({
 
   return (
     <div
-      className={`w-full inset-0 xl:h-[550px] max-w-screen-xl mx-auto relative overflow-clip rounded-[3px] bg-gray-50 ${classesWrapper}`}
+      className={` inset-0  max-h-[500px] w-full max-w-screen-xl mx-auto  overflow-clip rounded-md bg-gray-500 ${classesWrapper}`}
       data-sanity={props['data-sanity']}
     >
-      {imageUrl && (
+      <div className='w-full h-full relative'>
+{imageUrl && (
         <Image
-          className="absolute w-full  object-cover "
+          className="absolute h-full w-full  object-cover "
           alt={alt}
           width={width}
           height={height}
           src={imageUrl}
         />
       )}
+      </div>
+      
     </div>
   )
 }

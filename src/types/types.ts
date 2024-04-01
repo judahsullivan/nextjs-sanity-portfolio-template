@@ -28,6 +28,7 @@ export  interface ArticleProps{
     coverImage: Image;
     title?: string;
     description: string;
+    tags?: string[];
     slug: Slug
 }
 
@@ -35,9 +36,10 @@ export interface ProjectProps{
     _type?: 'project';
     _id: string;
     title?: string;
+    coverImage: Image;
+    tags?: string[];
     description: string;
     slug?: Slug
-
 }
 
 
