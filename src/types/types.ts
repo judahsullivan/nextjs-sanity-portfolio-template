@@ -1,8 +1,10 @@
+import type { PortableTextBlock } from "next-sanity";
 import type { Image } from "sanity";
 
 export interface HomeProps{
 
     title?: string;
+      overview?: PortableTextBlock[]
     description?: string;
 
 }

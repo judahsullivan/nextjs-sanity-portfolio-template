@@ -8,11 +8,6 @@ const config = {
       
     ],
   },
-  logging: {
-    fetches: {
-      fullUrl: true,
-    },
-  },
   experimental: {
     taint: true,
   },

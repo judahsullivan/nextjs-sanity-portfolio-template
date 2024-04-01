@@ -12,6 +12,9 @@ export const projectId = assertValue(
 )
 
 export const useCdn = false
+export const revalidateSecret = process.env.SANITY_REVALIDATE_SECRET
+export const studioUrl = '/studio'
+
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {
