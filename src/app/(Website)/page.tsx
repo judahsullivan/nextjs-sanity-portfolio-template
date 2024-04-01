@@ -13,7 +13,7 @@ export interface HomePageProps{
 
 
 export default async function Home(){
-   const home = await client.fetch(`*[_type == 'home'][0]{...}`) 
+   const home = await client.fetch<HomeProps>(`*[_type == 'home'][0]{title,description, overview}`) 
 
 
 

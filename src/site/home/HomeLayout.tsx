@@ -13,11 +13,11 @@ export default function HomePageLayout({home}:HomePageProps ){
                 <hr />
                 <p className="text-lg">{home.description}</p>
                 </div>
-                <div>
+                <article className="p-rose">
                     {home.overview && (
-                    <CustomPortableText  value={home?.overview} paragraphClasses=""/>
+                    <CustomPortableText  value={home?.overview} paragraphClasses="text-lg"/>
                     )}
-                </div>
+                </article>
         </div>
         </div>
     )
