@@ -1,4 +1,5 @@
 import { getGlobalSettings } from "@/sanity/lib/queries";
+import Footer from "@/src/components/globals/footer";
 import Navigation from "@/src/components/globals/navigation";
 import { Fragment, ReactNode, Suspense } from "react";
 
@@ -28,6 +29,7 @@ export default async function Layout({
           </main>
         </Suspense>
         <Suspense>
+          <Footer />
         </Suspense>    
         </Fragment>
     )

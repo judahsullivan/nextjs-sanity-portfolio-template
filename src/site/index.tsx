@@ -21,7 +21,15 @@ export default async function SiteHandler({ pageMetadata }: PageHandlerProps)  {
        await client.fetch<any>(`
        *[_id == $id][0]{
         ...,
-        "contents": *[_type in ["article", "project"] && references(^._id)]
+        "contents": *[_type in ["article", "project"] && references(^._id)]{
+          ...,
+           title,
+        description,
+        "slug": slug.current,
+        _id,
+        coverImage,
+        tags
+        }
       }`, { id: pageMetadata._id });
 
       if (!page) {
