@@ -24,6 +24,7 @@ const _homeType = defineType({
       title: 'Overview',
       type: 'array',
       of: [
+        
         // Paragraphs
         defineArrayMember({
           lists: [],
@@ -56,11 +57,44 @@ const _homeType = defineType({
           styles: [],
           type: 'block',
         }),
+//customBlocks
+        defineArrayMember({
+          name: 'cards',
+          type: 'cards'
+        }),
+        defineField({
+          type: 'image',
+          name: 'image',
+          title: 'Image',
+          options: {
+            hotspot: true,
+          },
+          preview: {
+            select: {
+              imageUrl: 'asset.url',
+              title: 'caption',
+            },
+          },
+          fields: [
+            defineField({
+              title: 'Caption',
+              name: 'caption',
+              type: 'string',
+            }),
+            defineField({
+              name: 'alt',
+              type: 'string',
+              title: 'Alt text',
+              description:
+                'Alternative text for screenreaders. Falls back on caption if not set',
+            }),
       ],
-      validation: (rule) => rule.max(155).required(),
     }),
   ],
-});
+})
+  ]
+
+})
 
 export const home = definePageType(_homeType, pageTreeConfig,{
   isRoot: true

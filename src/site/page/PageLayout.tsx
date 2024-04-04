@@ -1,4 +1,4 @@
-import ContentCard from "@/src/components/ui/card";
+import ContentCard from "@/src/components/ui/articlecard";
 import { PagesProps   } from "@/src/types/types";
 
 export default function PageLayout({ page }: { page: PagesProps }) {

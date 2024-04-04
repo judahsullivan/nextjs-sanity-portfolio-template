@@ -6,6 +6,7 @@ import {
 import type { Image } from 'sanity'
 
 import ImageBox from '../ui/ImageBox'
+import Card from '../ui/card'
 
 export function CustomPortableText({
   paragraphClasses,
@@ -54,6 +55,10 @@ export function CustomPortableText({
           </div>
         )
       },
+      techCard: ({value}) => {
+        const {items} = value || {}
+        return <Card card={items} />
+      }
     },
   }
 

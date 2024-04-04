@@ -2,7 +2,6 @@ import { getGlobalSettings } from "@/sanity/lib/queries";
 import Footer from "@/src/components/globals/footer";
 import Navigation from "@/src/components/globals/navigation";
 import { Fragment, ReactNode, Suspense } from "react";
-import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -25,14 +24,13 @@ export default async function Layout({
           <Navigation settings={settings} />
         </Suspense>
         <Suspense>
-          <main className="px-6">
+          <main className="px-4">
         {children}
           </main>
         </Suspense>
         <Suspense>
           <Footer />
         </Suspense>    
-          <Analytics />
         </Fragment>
     )
 }

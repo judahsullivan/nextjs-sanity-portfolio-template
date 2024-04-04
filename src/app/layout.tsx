@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 
 export async function generateMetadata(): Promise<Metadata>{
@@ -25,6 +26,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Analytics />
         {children}
         </body>
     </html>
